@@ -11,8 +11,9 @@ class Alumno():
             while  nota<0 or nota>10 or interruptor:
                 try:
                     nota = float(input("introduce nota "))
+                    interruptor=False
                 except:
-                    interruptor= False
+                    interruptor= True
 
             self.__notas.append(nota)
 
