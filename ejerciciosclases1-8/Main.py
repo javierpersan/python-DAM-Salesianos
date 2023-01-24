@@ -4,19 +4,20 @@ def sacarmedia(notasalumno):
     for i in notasalumno:
         suma+=i
     return suma/3
-def imprimir(alumos, alumnos=None):
-    f= open("alumnosconmedia.txt",'w')
-    llaves = alumnos.keys()
-    for i in alumos:
-        f.write(i.getkey(),sacarmedia(i.value()))
+def imprimir(alumos):
+    f= open("alumnosconmedia.txt",'a')
+    llaves = alumos.keys()
+    for i in llaves:
+        f.write(i+"\n")
+        f.write(str(sacarmedia(alumos[i]))+"\n")
     f.close()
 def opc1():
     alumnos ={}
-    resp=str(input("desea introducir alumnos?")).Upper()
+    resp=str(input("desea introducir alumnos?")).upper()
     while resp=="SI":
         alum=Alumno()
         alumnos[alum.nombre]=alum.notas
-        resp = str(input("desea introducir mas alumnos?")).Upper()
+        resp = str(input("desea introducir mas alumnos?")).upper()
     imprimir(alumnos)
 
 

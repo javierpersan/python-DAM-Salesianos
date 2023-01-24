@@ -3,12 +3,16 @@ class Alumno():
     __nombre=""
     __notas=["",""]
     def __init__(self):
-        self.__nombre=str(input("introduce el nombre del alumno"))
+        self.__nombre=(input("introduce el nombre del alumno"))
         self.__notas.clear()
         for i in range (1,4):
-            nota=0
-            while nota<0 and nota>10:
-                nota = float(input("introduce nota ",i))
+            nota=-1
+            interruptor= True
+            while  nota<0 or nota>10 or interruptor:
+                try:
+                    nota = float(input("introduce nota "))
+                except:
+                    interruptor= False
 
             self.__notas.append(nota)
 
