@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51dda8ff-d8d0-4ce3-85ab-96a2de2c837d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python-DAM-Salesianos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python-DAM-Salesianos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciosclases1-8/Alumno.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciosclases1-8/Alumno.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejerciciosclases1-8/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejerciciosclases1-8/Main.py" afterDir="false" />
-    </list>
+    <list default="true" id="51dda8ff-d8d0-4ce3-85ab-96a2de2c837d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +43,8 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\JAVIER\Desktop\temario python\pythonProject\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\javie\Documents\GitHub\python-DAM-Salesianos\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.9 (python-DAM-Salesianos)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ejerciciosclases1-8" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
