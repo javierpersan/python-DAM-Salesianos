@@ -34,3 +34,4 @@ while res!=3:
                   "2 ejercicio universidad con base de datos "
                   "3 salir"))
     opciones[res]()
+
