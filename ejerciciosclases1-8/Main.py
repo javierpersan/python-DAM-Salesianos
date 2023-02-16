@@ -1,37 +1,24 @@
-from Alumno import Alumno
-def sacarmedia(notasalumno):
-    suma=0
-    for i in notasalumno:
-        suma+=i
-    return suma/3
-def imprimir(alumos):
-    f= open("alumnosconmedia.txt",'a')
-    llaves = alumos.keys()
-    for i in llaves:
-        f.write(i+"\n")
-        f.write(str(sacarmedia(alumos[i]))+"\n")
-    f.close()
-def opc1():
-    alumnos ={}
-    resp=str(input("desea introducir alumnos?")).upper()
-    while resp=="SI":
-        alum=Alumno()
-        alumnos[alum.nombre]=alum.notas
-        resp = str(input("desea introducir mas alumnos?")).upper()
-    imprimir(alumnos)
+import MySQLdb
+class Conexion:
+    DB_HOST = 'localhost'
+    DB_USER = 'root'
+    DB_PASS = ''
+    DB_NAME = 'primitiva'
 
+    def __init__(self,query=''):
+        print("conexion abierta")
+        datos = [self.DB_HOST, self.DB_USER, self.DB_PASS, self.DB_NAME]
 
-def opc2():
-    print("opc2")
+        conn = MySQLdb.connect(*datos)
+        cursor = conn.cursor()
+        cursor.execute(query)
+        if query.upper().startswith('SELECT'):
+            data = cursor.fetchall()
+        else:
+            conn.commit()
+            data = None
 
-def opc3():
-    print("Saliendo...")
-res=1
-opciones={1:opc1,2:opc2,3:opc3}
-while res!=3:
-    res=int(input("escribe la opcion "
-                  "1 ejercicio con listas de alumnos y generar fichero con media"
-                  "2 ejercicio universidad con base de datos "
-                  "3 salir"))
-    opciones[res]()
+        cursor.close()
+        conn.close()
 
+        return data

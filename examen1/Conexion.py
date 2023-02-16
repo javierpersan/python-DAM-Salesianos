@@ -9,17 +9,16 @@ class Conexion:
         print("conexion abierta")
         datos = [self.DB_HOST, self.DB_USER, self.DB_PASS, self.DB_NAME]
 
-        conn = MySQLdb.connect(*datos)  # Conectar a la base de datos
-        cursor = conn.cursor()  # Crear un cursor
-        cursor.execute(query)  # Ejecutar una consulta
-
+        conn = MySQLdb.connect(*datos)
+        cursor = conn.cursor()
+        cursor.execute(query)
         if query.upper().startswith('SELECT'):
-            data = cursor.fetchall()  # Traer los resultados de un select
+            data = cursor.fetchall()
         else:
-            conn.commit()  # Hacer efectiva la escritura de datos
+            conn.commit()
             data = None
 
-        cursor.close()  # Cerrar el cursor
-        conn.close()  # Cerrar la conexión
+        cursor.close()
+        conn.close()
 
         return data

@@ -1,6 +1,7 @@
 from Conexion import Conexion
 import random
 from datetime import datetime
+from datetime import date
 from Informe import Informe
 import sys
 def creararchivo(arrayd):
@@ -34,7 +35,7 @@ def creararchivo(arrayd):
         numeros1= ' '.join(str(x) for x in arrayd[1:6])
         print(numeros1)
         numeros2=" ".join(str(x) for x in z.numeros)
-        f.write(z.correo+"\n participa con los numeros:"+numeros2+"\n Complementario:"+str(z.complementario)+"\n reintegro:"+str(z.reintegro)+"\n Combinacion ganadora: "+numeros1)
+        f.write(z.correo+"\n participa con los numeros:"+numeros2+"\n Complementario:"+str(z.complementario)+"\n reintegro:"+str(z.reintegro)+" Combinacion ganadora: "+numeros1+"\n")
         f.close()
 
 
@@ -44,6 +45,8 @@ def creararchivo(arrayd):
 
 def imprimirganadores(arrad):
     print("Imprimieendo...")
+
+
 def salir(arrayd):
     print("saliendo")
 def menu(arrayd):
@@ -57,22 +60,18 @@ def menu(arrayd):
         opc=int(input("inserte opcion que desea ejecutar"))
         opciones[opc](arrayd)
 
-
-
-
-
 print("sacando combinacion ganadora...")
 arraybd =[]
 d=datetime.now()
 fecha=d.strftime("%Y-%m-%d")
-print(fecha)
+fecha2= str(date.today())
+print(fecha2)
 arraybd.append(fecha)
 for i in range(1,8):
     arraybd.append(random.randint(1,49))
 arraybd.append(random.randint(1,9))
 c=Conexion("insert into ganadora values ('%s',%s,%s,%s,%s,%s,%s,%s,%s)" %tuple(arraybd))
 menu(arraybd)
-
 
 
 
